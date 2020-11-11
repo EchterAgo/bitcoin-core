@@ -58,7 +58,7 @@ export default class Parser {
     }
 
     // Parsing the body with custom parser to support BigNumbers.
-    body = parse(body);
+    body = JSON.parse(body);
 
     if (!Array.isArray(body)) {
       return getRpcResult(body, { headers: this.headers, response });
@@ -95,7 +95,7 @@ export default class Parser {
 
     // Parsing the body with custom parser to support BigNumbers.
     if (extension === 'json') {
-      body = parse(body);
+      body = JSON.parse(body);
     }
 
     if (this.headers) {
